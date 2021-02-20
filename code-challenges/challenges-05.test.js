@@ -125,6 +125,7 @@ const listFoods = (recipe) => {
   recipe.ingredients.forEach(value => {
     result.push(value.slice(value.indexOf(' ', value.indexOf(' ') + 1), value.length).slice(1));
   });
+
   return result;
 };
 
