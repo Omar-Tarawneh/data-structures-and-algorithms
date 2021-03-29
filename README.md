@@ -19,3 +19,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | Challenge     | Link                                               |
 | ------------- | -------------------------------------------------- |
 | Reverse Array | [README](javascript/code-challenges/arrayReverse/) |
+| Array Shift   | [README](javascript/code-challenges/arrayShifte/)  |
