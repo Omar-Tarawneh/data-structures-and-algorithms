@@ -133,4 +133,59 @@ describe("testing the linked list", () => {
 
     expect(linkedList.toString()).toEqual("{3} ->{2} ->{1} ->{5} ->NULL");
   });
+  test(" k is greater than the length of the linked list", () => {
+    let valueOne = new Node(1);
+    let valueTwo = new Node(2);
+    let valueThree = new Node(3);
+    let linkedList = new LinkedList();
+
+    linkedList.insert(valueOne);
+    linkedList.insert(valueTwo);
+    linkedList.insert(valueThree);
+
+    expect(linkedList.kthFromEnd(5)).toEqual("Exception");
+  });
+  test(" k and the length of the list are the same", () => {
+    let valueOne = new Node(1);
+    let valueTwo = new Node(2);
+    let valueThree = new Node(3);
+    let linkedList = new LinkedList();
+
+    linkedList.insert(valueOne);
+    linkedList.insert(valueTwo);
+    linkedList.insert(valueThree);
+
+    expect(linkedList.kthFromEnd(3)).toEqual("Exception");
+  });
+  test(" k is not a positive integer", () => {
+    let valueOne = new Node(1);
+    let valueTwo = new Node(2);
+    let valueThree = new Node(3);
+    let linkedList = new LinkedList();
+
+    linkedList.insert(valueOne);
+    linkedList.insert(valueTwo);
+    linkedList.insert(valueThree);
+
+    expect(linkedList.kthFromEnd(-1)).toEqual("Exception");
+  });
+  test(" linked list is of a size 1", () => {
+    let valueOne = new Node(1);
+    let linkedList = new LinkedList();
+    linkedList.insert(valueOne);
+
+    expect(linkedList.kthFromEnd(0)).toEqual(1);
+  });
+  test(" k is not at the end, but somewhere in the middle of the linked list", () => {
+    let valueOne = new Node(1);
+    let valueTwo = new Node(2);
+    let valueThree = new Node(3);
+    let linkedList = new LinkedList();
+
+    linkedList.insert(valueOne);
+    linkedList.insert(valueTwo);
+    linkedList.insert(valueThree);
+
+    expect(linkedList.kthFromEnd(1)).toEqual(2);
+  });
 });
