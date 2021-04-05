@@ -33,11 +33,50 @@ class LinkedList {
     }
     return false;
   }
+  append(node) {
+    let current = this.head;
+    while (current) {
+      if (current.next == null) {
+        current.next = node;
+        break;
+      }
+      current = current.next;
+      this.length++;
+    }
+  }
+  insertAfter(value, newVal) {
+    let node = new Node(newVal);
+    let current = this.head;
+    while (current) {
+      if (current.value === value) {
+        let temp = current.next;
+        current.next = node;
+        node.next = temp;
+        return;
+      }
+      current = current.next;
+    }
+    return "Exeption";
+  }
+  insertBefore(value, newVal) {
+    let node = new Node(newVal);
+    let current = this.head;
+    while (current && current.next !== null) {
+      if (current.next.value === value) {
+        let temp = current.next;
+        current.next = node;
+        node.next = temp;
+        return;
+      }
+      current = current.next;
+    }
+    return "Exeption";
+  }
   toString() {
     let lastNode = this.head;
     let listString = "";
-    for (let index = 0; index < this.length; index++) {
-      listString += `{${lastNode.value}} -> `;
+    while (lastNode) {
+      listString += `{${lastNode.value}} ->`;
       lastNode = lastNode.next;
     }
     listString += `NULL`;
