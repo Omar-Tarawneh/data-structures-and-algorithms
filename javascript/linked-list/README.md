@@ -23,7 +23,7 @@ Create a class for the Linked list and the Node with three methods `insert, incl
 ![white-board](/assets/linked-list-whiteboard.png)
 ![kthfromEnd](/assets/whiteboard-kth.png)
 
-- `insert`: accept a node as an argument and insert it to the first of the linked list.
+- `insert`: accept a node as an argument and insert it to the first of the linked list
 - `includes`: accept a value as an argument and return **true** if the value exist or **false** if not.
 - `toString`: accept no argument and return a string of the nodes value in the followin format `{a} -> {b} -> {c} -> NULL`.
 - `append`: accept a value and creat and instance node with value and append it to the end of the linked list.
