@@ -62,7 +62,7 @@ describe("testing the linked list", () => {
     linkedList.insert(valueTwo);
     linkedList.insert(valueThree);
 
-    linkedList.append(new Node(4));
+    linkedList.append(4);
     expect(linkedList.toString()).toEqual("{3} ->{2} ->{1} ->{4} ->NULL");
   });
   test("append multible value to the end of linked list", () => {
@@ -75,8 +75,8 @@ describe("testing the linked list", () => {
     linkedList.insert(valueTwo);
     linkedList.insert(valueThree);
 
-    linkedList.append(new Node(4));
-    linkedList.append(new Node(5));
+    linkedList.append(4);
+    linkedList.append(5);
     expect(linkedList.toString()).toEqual("{3} ->{2} ->{1} ->{4} ->{5} ->NULL");
   });
   test("Can successfully insert a node before a node located i the middle of a linked list", () => {
