@@ -16,8 +16,10 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 ##### Table for content Code 401
 
-| Challenge           | Link                                                    |
-| ------------------- | ------------------------------------------------------- |
-| Reverse Array       | [README](javascript/code-challenges/arrayReverse/)      |
-| Array Shift         | [README](javascript/code-challenges/arrayShifte/)       |
-| Array Binary Search | [README](javascript/code-challenges/arrayBinarySearch/) |
+| Challenge           | Link                                                       |
+| ------------------- | ---------------------------------------------------------- |
+| Reverse Array       | [README](javascript/code-challenges/arrayReverse/)         |
+| Array Shift         | [README](javascript/code-challenges/arrayShifte/)          |
+| Array Binary Search | [README](javascript/code-challenges/arrayBinarySearch/)    |
+| Linked List         | [README](javascript/linked-list)                           |
+| Array Binary Search | [README](javascript/code-challenges/code-challenges/llZip) |
