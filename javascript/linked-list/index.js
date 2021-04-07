@@ -78,6 +78,19 @@ class LinkedList {
     }
     return "Exeption";
   }
+  kthFromEnd(k) {
+    let current = this.head;
+    if (k <= this.length - 1 && k >= 0) {
+      for (let i = this.length - 1; i >= 0; i--) {
+        if (k == i) {
+          return current.value;
+        }
+        current = current.next;
+      }
+    } else {
+      return "Exception";
+    }
+  }
   toString() {
     let lastNode = this.head;
     let listString = "";
@@ -89,6 +102,16 @@ class LinkedList {
     return listString;
   }
 }
+let valueOne = new Node(1);
+let valueTwo = new Node(2);
+let valueThree = new Node(3);
+let ll = new LinkedList();
+
+ll.insert(valueOne);
+ll.insert(valueTwo);
+ll.insert(valueThree);
+console.log(ll.toString());
+console.log(ll.kthFromEnd(2));
 
 module.exports = {
   Node: Node,
