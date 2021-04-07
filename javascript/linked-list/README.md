@@ -19,7 +19,7 @@ Create a class for the Linked list and the Node with three methods `insert, incl
 
 ## API
 
-![white-board](/assets/linked-list-whiteboard.png)
+![white-board](../../../assets/linked-list-whiteboard.png)
 
 - `insert`: accept a node as an argument and insert it to the first of the linked list
 - `includes`: accept a value as an argument and return **true** if the value exist or **false** if not.
