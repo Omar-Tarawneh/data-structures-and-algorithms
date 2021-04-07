@@ -113,14 +113,6 @@ ll.insert(valueThree);
 console.log(ll.toString());
 console.log(ll.kthFromEnd(2));
 
-let valueOne = new Node(1);
-let valueTwo = new Node(2);
-let valueThree = new Node(3);
-let ll = new LinkedList();
-
-ll.append(valueOne);
-ll.append(valueTwo);
-ll.append(valueThree);
 module.exports = {
   Node: Node,
   LinkedList: LinkedList,
