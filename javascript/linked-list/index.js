@@ -102,17 +102,6 @@ class LinkedList {
     return listString;
   }
 }
-let valueOne = new Node(1);
-let valueTwo = new Node(2);
-let valueThree = new Node(3);
-let ll = new LinkedList();
-
-ll.insert(valueOne);
-ll.insert(valueTwo);
-ll.insert(valueThree);
-console.log(ll.toString());
-console.log(ll.kthFromEnd(2));
-
 module.exports = {
   Node: Node,
   LinkedList: LinkedList,
