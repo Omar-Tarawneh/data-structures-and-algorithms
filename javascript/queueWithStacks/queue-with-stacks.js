@@ -26,4 +26,6 @@ class PseudoQueue {
   }
 }
 
+const queue = new PseudoQueue();
+
 module.exports = PseudoQueue;
