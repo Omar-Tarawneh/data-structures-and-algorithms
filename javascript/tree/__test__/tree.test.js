@@ -1,17 +1,16 @@
 "use strict";
-const { BinarySearchTree } = require("../tree.js");
-const { Node } = require("../../linked-list/index.js");
+const { BinaryTree, BinarySearchTree, Node } = require("../tree.js");
 
 describe("Testing the binary search tree", () => {
   test("Can successfully instantiate an empty tree", () => {
-    let root = new Node(2);
-    let binaryTree = new BinarySearchTree(root);
-    expect(binaryTree.root.next).toBeNull();
+    // let root = new Node(2);
+    let binaryTree = new BinarySearchTree();
+    expect(binaryTree.root).toBeNull();
   });
   test("Can successfully instantiate a tree with a single root node", () => {
     let root = new Node(2);
     let binaryTree = new BinarySearchTree(root);
-    expect(binaryTree.root.next).toBeNull();
+    expect(binaryTree.root.value).toEqual(2);
   });
   test("Can successfully add a left child and right child to a single root node", () => {
     let root = new Node(2);
@@ -44,15 +43,40 @@ describe("Testing the binary search tree", () => {
     binaryTree.add(0);
     expect(binaryTree.inOrder()).toStrictEqual([0, 2, 4, 6, 9, 11]);
   });
-  test("Can successfully return a collection from a postorder traversal", () => {
+  test("Can successfully return the maximum value in the tree", () => {
     let root = new Node(2);
-    let binaryTree = new BinarySearchTree(root);
-
-    binaryTree.add(4);
-    binaryTree.add(11);
-    binaryTree.add(6);
-    binaryTree.add(9);
-    binaryTree.add(0);
-    expect(binaryTree.postOrder()).toStrictEqual([0, 9, 6, 11, 4, 2]);
+    let sec = new Node(7);
+    sec.left = new Node(2);
+    let thi = new Node(6);
+    thi.right = new Node(11);
+    thi.left = new Node(5);
+    sec.right = thi;
+    root.left = sec;
+    let four = new Node(5);
+    let fif = new Node(9);
+    fif.left = new Node(4);
+    four.right = fif;
+    root.right = four;
+    let tree = new BinaryTree(root);
+    //        2
+    //      /  \
+    //     7    5
+    //    / \    \
+    //   2   6    9
+    //      / \   /
+    //     5  11 4
+    expect(tree.findMax()).toEqual(11);
+  });
+  test("Can successfully return the maximum value in the tree", () => {
+    let root = new Node(2);
+    let tree = new BinaryTree(root);
+    //        2
+    //      /   \
+    //     null null
+    expect(tree.findMax()).toEqual(2);
+  });
+  test("Can successfully return null when the tree is empty", () => {
+    let tree = new BinaryTree();
+    expect(tree.findMax()).toBeNull();
   });
 });
