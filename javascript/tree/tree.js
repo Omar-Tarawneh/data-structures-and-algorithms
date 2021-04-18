@@ -47,6 +47,23 @@ class BinaryTree {
     _traverse(this.root);
     return output;
   }
+  findMax() {
+    let max = 0;
+    if (!this.root) return null;
+    const _traverse = (node) => {
+      if (node.left) {
+        max = _max(node.left, max);
+        _traverse(node.left);
+      }
+      max = _max(node, max);
+      if (node.right) {
+        max = _max(node.right, max);
+        _traverse(node.right);
+      }
+    };
+    _traverse(this.root);
+    return max;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -80,7 +97,17 @@ class BinarySearchTree extends BinaryTree {
     }
   }
 }
+// private function
 
+// compare node value with max variable;
+const _max = (node, max) => {
+  if (node.value > max) {
+    max = node.value;
+    return max;
+  }
+  return max;
+};
+// add a node to binary search tree
 const _add = (root, node) => {
   if (node.value < root.value) {
     if (root.left == null) {
@@ -100,4 +127,5 @@ const _add = (root, node) => {
 module.exports = {
   BinaryTree,
   BinarySearchTree,
+  Node,
 };
