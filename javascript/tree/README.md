@@ -28,6 +28,7 @@ Useing Recursion make you think in another way for binary search tree.
   - inOrder : left - Root - Right. Big O Time -> O(n)
   - postOrder: Root - Left - Right. Big O Time -> O(n)
   - findMax: return the maximum value in the tree -> time complexity = O(n) Space complexity = O(1)
+  - breadthFirst: return an array of each node value by level -> time complexity = O(n) Space Complexity = O(n)
 
 - Binary Search Tree:
   - add method: add a value to the tree
@@ -36,3 +37,4 @@ Useing Recursion make you think in another way for binary search tree.
 ### Find Max Whiteboard
 
 ![max](../../assets/find-max-binary-tree.png)
+![breadth-first](../../assets/breadth-first.png)

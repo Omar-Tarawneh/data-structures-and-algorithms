@@ -64,6 +64,32 @@ class BinaryTree {
     _traverse(this.root);
     return max;
   }
+  breadthFirst() {
+    let output = [];
+    if (!this.root) {
+      return null;
+    }
+    const _breadthFirst = (root) => {
+      let queue = [root];
+
+      while (queue.length > 0) {
+        let node = queue.shift();
+        let value = node.value;
+        output.push(value); // global array
+        if (node.left == null && node.right == null) {
+          continue;
+        }
+        if (node.left != null) {
+          queue.push(node.left);
+        }
+        if (node.right != null) {
+          queue.push(node.right);
+        }
+      }
+    };
+    _breadthFirst(this.root);
+    return output;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
