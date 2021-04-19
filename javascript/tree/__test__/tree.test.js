@@ -79,4 +79,32 @@ describe("Testing the binary search tree", () => {
     let tree = new BinaryTree();
     expect(tree.findMax()).toBeNull();
   });
+  test("Can successfully return breadth first of the tree", () => {
+    let root = new Node(2);
+    let sec = new Node(7);
+    sec.left = new Node(2);
+    let thi = new Node(6);
+    thi.right = new Node(11);
+    thi.left = new Node(5);
+    sec.right = thi;
+    root.left = sec;
+    let four = new Node(5);
+    let fif = new Node(9);
+    fif.left = new Node(4);
+    four.right = fif;
+    root.right = four;
+    let tree = new BinaryTree(root);
+    //        2
+    //      /  \
+    //     7    5
+    //    / \    \
+    //   2   6    9
+    //      / \   /
+    //     5  11 4
+    expect(tree.breadthFirst()).toStrictEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
+  });
+  test("Can successfully return null the tree is empty", () => {
+    let tree = new BinaryTree();
+    expect(tree.breadthFirst()).toBeNull();
+  });
 });
