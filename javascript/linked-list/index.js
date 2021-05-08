@@ -91,6 +91,15 @@ class LinkedList {
       return "Exception";
     }
   }
+  values() {
+    let values = [];
+    let current = this.head;
+    while (current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    return values;
+  }
   toString() {
     let lastNode = this.head;
     let listString = "";
