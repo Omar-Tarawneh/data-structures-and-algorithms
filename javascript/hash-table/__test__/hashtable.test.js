@@ -3,7 +3,7 @@
 const HashTable = require("../hashtable");
 
 describe("Hash Tables tests", () => {
-  const hashtable = new HashTable();
+  const hashtable = new HashTable(101);
   beforeAll(() => {
     hashtable.add("striker", "Ronaldo");
     hashtable.add("defender", "Ramos");
@@ -24,11 +24,11 @@ describe("Hash Tables tests", () => {
   test("Successfully handle a collision within the hashtable", () => {
     hashtable.add("striker", "Messi");
     let bucket = hashtable.get("striker");
-    expect(bucket.head.next.value.value).toEqual("Messi");
+    expect(bucket.value).toEqual("Ronaldo");
   });
   test("Successfully retrieve a value from a bucket within the hashtable that has a collision", () => {
-    let bucket = hashtable.get("striker");
-    expect(bucket.values()).toEqual([
+    let index = hashtable.hash("striker");
+    expect(hashtable.table[index].values()).toEqual([
       {
         key: "striker",
         value: "Ronaldo",
