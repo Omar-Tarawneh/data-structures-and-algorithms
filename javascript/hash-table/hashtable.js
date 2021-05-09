@@ -3,8 +3,8 @@
 const { LinkedList } = require("../linked-list/index.js");
 
 class HashTable {
-  constructor() {
-    this.table = new Array(101);
+  constructor(length) {
+    this.table = new Array(length);
   }
 
   add(key, value) {
@@ -19,7 +19,7 @@ class HashTable {
     const hash = 37;
     let total = 0;
 
-    for (var i = 0; i < key.length; i++) {
+    for (let i = 0; i < key.length; i++) {
       total += hash * total + key.charCodeAt(i);
     }
     total %= this.table.length;
@@ -30,8 +30,14 @@ class HashTable {
   }
 
   get(key) {
-    let hash = this.hash(key);
-    return this.table[hash];
+    let index = this.hash(key);
+    if (this.contains(key)) {
+      let valuesArr = this.table[index].values();
+      for (let i = 0; i < valuesArr.length; i++) {
+        if (valuesArr[i].key === key) return valuesArr[i];
+      }
+    }
+    return null;
   }
 
   contains(key) {

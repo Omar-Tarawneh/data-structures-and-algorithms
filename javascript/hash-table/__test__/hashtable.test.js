@@ -27,6 +27,7 @@ describe("Hash Tables tests", () => {
     expect(bucket.head.next.value.value).toEqual("Messi");
   });
   test("Successfully retrieve a value from a bucket within the hashtable that has a collision", () => {
+    console.log(hashtable);
     let bucket = hashtable.get("striker");
     expect(bucket.values()).toEqual([
       {
