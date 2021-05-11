@@ -5,6 +5,7 @@ const { LinkedList } = require("../linked-list/index.js");
 class HashTable {
   constructor(length) {
     this.table = new Array(length);
+    this.keys = [];
   }
 
   add(key, value) {
@@ -13,6 +14,7 @@ class HashTable {
       this.table[hash] = new LinkedList();
     }
     this.table[hash].append({ key, value });
+    this.keys[this.keys.length] = key;
   }
 
   hash(key) {
